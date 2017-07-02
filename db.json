@@ -1,0 +1,17 @@
+{
+  "people" : [
+    {
+      "id" : "12",
+      "name" : "Moritz"
+    }
+  ],
+  "comments" : [
+    {
+      "id" : "1234",
+      "author" : "12",
+      "text" : "Alles Tipp Topp"
+    }
+
+  ]
+
+}
