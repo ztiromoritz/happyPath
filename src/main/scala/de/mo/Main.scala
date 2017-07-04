@@ -17,4 +17,22 @@ object Main extends App{
   Service.getPerson("12").foreach(println)
   Service.getPerson("13").foreach(println)
 
+
+  //Social Media Example
+  /*
+     val reply =
+     for {
+        user <- getUser,
+        friend <- getBestFriend(user),
+        message <- getLastMessage(friend),
+        if(message.isFunny) //Guard als erweiterung des Beispiels
+     }yield {  // Wann kommt yield wann nicht, Faustregel, Merksatz
+        createReply(user, friend, message)
+     }
+
+     =>
+     flatMap Übersetzung
+   */
+
+
 }
