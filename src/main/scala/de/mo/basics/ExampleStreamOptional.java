@@ -1,5 +1,7 @@
 package de.mo.basics;
 
+import de.mo.Pokemon;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +11,7 @@ import java.util.stream.Stream;
 public class ExampleStreamOptional {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         final List<Integer> listA = Stream.of(1, 2, 3, 4, 5)
                 .map(x -> x * x)
@@ -20,8 +22,8 @@ public class ExampleStreamOptional {
 
         final List<Integer> listB = Arrays.asList(10, 20, 30, 40, 50);
 
-        for (Integer x: listA) {
-            for(Integer y: listB){
+        for (Integer x : listA) {
+            for (Integer y : listB) {
 
             }
         }
@@ -43,9 +45,20 @@ public class ExampleStreamOptional {
                 .filter(x -> x > 2);
 
 
+        final Optional<String> evolvedPokemon =
+                Optional.of("Bisasam")
+                        .map(Pokemon::evolve)
+                        .filter(Pokemon::isFire);
+
+        final Optional<String> noPokemon =
+                Optional.<String>empty()
+                        .map(Pokemon::evolve)
+                        .filter(Pokemon::isFire);
+
+
         Integer sum = null;
-        if(valueA.isPresent()){
-            if(valueB.isPresent()){
+        if (valueA.isPresent()) {
+            if (valueB.isPresent()) {
                 sum = valueA.get() + valueB.get();
             }
         }
