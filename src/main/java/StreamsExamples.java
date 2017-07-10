@@ -1,9 +1,16 @@
+import org.omg.IOP.ServiceContextHelper;
+import scala.reflect.runtime.TwoWayCache;
+
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class StreamsExamples {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
 
         // Wer hat in Java schon mit Streams gearbeitet?
@@ -23,15 +30,52 @@ public class StreamsExamples {
         //        Option(al) Beispiel
         //          TODO
         //  https://bugs.openjdk.java.net/browse/JDK-8050820
-        
+
         // (C: ja halt beides irgendwie ... )
 
-        Arrays.asList(1, 2, 3, 4, 5, 6).stream()
-                .map(x->x*x)
-                .filter(x->x!=9)
-                .map(x->x-3)
-                .peek(System.out::println)
-                .count();
+        System.out.println(
+                Stream.of(1, 2, 3, 4, 5, 6)
+                        .map(x -> x * x)
+                        .filter(x -> x != 9)
+                        .map(x -> x - 3)
+                        .peek(System.out::println)
+                        .count()
+        );
+
+
+        Optional<String> maybeString = Optional.of("Foo")
+                .filter(x->!x.isEmpty())
+                .map(x->x.toLowerCase());
+
+
+
+
+        class Point {
+            int x;
+            int y;
+
+            public Point(int x, int y) {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+
+        List<Point> points = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 100; j++) {
+                points.add(new Point(i,j));
+            }
+        }
+
+        List<Integer> list = new ArrayList<>();
+        List<Integer> listFoo = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            list.set(i,list.get(i)*list.get(i));
+            list.set(i,list.get(i)-3);
+            System.out.println(list.get(i));
+        }
+
 
         // Ich würde auch eher sagen A aber so ein Stream kann sehr kurz sein.
 
@@ -40,8 +84,6 @@ public class StreamsExamples {
         // "yield" - ergeben, liefern, hervorbringen
         // "comprehension" - Einbeziehung, Umfassung, Verständnis; Begreifen
     }
-
-
 
 
 }

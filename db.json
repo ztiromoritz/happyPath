@@ -1,17 +1,33 @@
 {
-  "people" : [
+  "users" : [
+    {
+      "id" : "11",
+      "name" : "Otto",
+      "lastMessageId" : "1235"
+    },
     {
       "id" : "12",
-      "name" : "Moritz"
+      "name" : "Moritz",
+      "lastMessageId" : "1234",
+      "bestFriendId": "11"
     }
   ],
-  "comments" : [
+  "messages" : [
     {
       "id" : "1234",
-      "author" : "12",
-      "text" : "Alles Tipp Topp"
+      "authorId" : "12",
+      "text" : "Alles Tipp Topp!",
+      "nice" : "true"
+    }, {
+      "id" : "1235",
+      "authorId" : "11",
+      "text" : "Find ich auch.",
+      "nice" : "true"
+    }, {
+      "id" : "1236",
+      "authorId" : "12",
+      "text" : "Nerv nicht!",
+      "nice" : "false"
     }
-
   ]
-
 }
