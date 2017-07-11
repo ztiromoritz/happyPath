@@ -3,6 +3,10 @@ Scala Tests and Examples
 
 # Start REST-Service
 Install: 
- npm i -g json-server
+```
+npm i -g json-server
+```
 Run:
- json-server db.json
+```
+json-server db.json
+```
